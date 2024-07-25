@@ -15,8 +15,6 @@ public class IdiomasService implements IIdiomasService{
 
     @Override
     public List<Idiomas> getAll() {
-        List<Idiomas> idiomas = (List<Idiomas>) idiomasRepository.findAll();
-        System.out.println("Idiomas obtenidos: " + idiomas);
-        return idiomas;
+        return (List<Idiomas>) idiomasRepository.findAll();
     }
 }

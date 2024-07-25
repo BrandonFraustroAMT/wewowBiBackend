@@ -4,17 +4,19 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pivot.wewow.entities.Idiomas;
 import com.pivot.wewow.services.IIdiomasService;
 
 @RestController
+@RequestMapping("/api")
 public class IdiomasController {
     @Autowired
     private IIdiomasService idiomasService;
 
-    @GetMapping("/api/idiomas")
+    @GetMapping("/idiomas")
     public List<Idiomas> getAll() {
         return idiomasService.getAll();
     }
