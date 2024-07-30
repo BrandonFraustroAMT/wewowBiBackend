@@ -9,14 +9,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "EMPRESASModulos")
+@Table(name = "EMPRESASModulosSUB", schema = "dbo")
 @Getter @Setter
-public class EmpresasModulos {
+public class EmpresasModulosSub {
     @Id
-    private Short modid;
+    private Short subid;
     @ManyToOne
-    @JoinColumn(name = "empid")
-    private Empresas empid;
-    private String modnom;
-    private String moddescre;
+    @JoinColumn(name = "modid")
+    private EmpresasModulos id;
+    private String subnom;
 }
