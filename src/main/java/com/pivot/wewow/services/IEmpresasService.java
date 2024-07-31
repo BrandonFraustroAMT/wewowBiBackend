@@ -6,4 +6,6 @@ import com.pivot.wewow.entities.Empresas;
 
 public interface IEmpresasService {
     List<Empresas> getAll();
+
+    Empresas getById(Long id);
 }

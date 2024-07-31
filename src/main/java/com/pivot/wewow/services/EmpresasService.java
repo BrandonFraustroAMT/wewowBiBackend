@@ -17,5 +17,10 @@ public class EmpresasService implements IEmpresasService{
     public List<Empresas> getAll() {
         return (List<Empresas>) eRepository.findAll();
     }
+
+    @Override
+    public Empresas getById(Long id) {
+        return eRepository.findById(id).get();
+    }
     
 }

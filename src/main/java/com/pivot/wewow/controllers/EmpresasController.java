@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pivot.wewow.entities.Empresas;
 import com.pivot.wewow.services.EmpresasService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 
 @RestController
@@ -23,5 +25,20 @@ public class EmpresasController {
         List<Empresas> empresas = eService.getAll();
         return ResponseEntity.ok(empresas);
     }
+
+    @GetMapping("/empresas/{empid}")
+    public ResponseEntity<Empresas> getEmpresa(@PathVariable Long empid) {
+        try {
+            Empresas empresa = eService.getById(empid);
+            if (empresa != null) {
+                return ResponseEntity.ok(empresa);
+            }
+            return ResponseEntity.notFound().build();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+            return ResponseEntity.badRequest().body(null);
+        }
+    }
+    
     
 }
