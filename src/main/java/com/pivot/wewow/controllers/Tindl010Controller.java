@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
+
 @RestController
 @RequestMapping("/api")
 public class Tindl010Controller {
@@ -30,5 +31,12 @@ public class Tindl010Controller {
         List<Tindl010> tindl010s = tindl010Service.getByEmpidAndLindidlinRange(empid);
         return ResponseEntity.ok(tindl010s);
     }
+
+    @GetMapping("/tindl010/dimensions/{empid}")
+    public ResponseEntity<?> getDataDimensions(@PathVariable Long empid) {
+        List<Object[]> results = tindl010Service.getDataDimensions(empid);
+        return ResponseEntity.ok(results);
+    }
+    
     
 }

@@ -21,5 +21,9 @@ public class Tindl010Service implements ITindl010Service{
     public List<Tindl010> getByEmpidAndLindidlinRange(Long empid) {
         return tindl010Repository.findByEmpidAndLindidlinBetween(empid);
     }
+
+    public List<Object[]> getDataDimensions(Long empid) {
+        return tindl010Repository.findDataDimensions(empid);
+    }
     
 }
