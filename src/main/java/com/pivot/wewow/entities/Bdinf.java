@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter @Setter
 public class Bdinf {
     @EmbeddedId
-    private BdinfId bId;
+    private BdinfsId bId;
 
     private String bdinfnumjd;
     private String bdinfcont;

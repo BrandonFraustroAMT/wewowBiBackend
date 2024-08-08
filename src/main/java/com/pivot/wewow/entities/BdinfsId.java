@@ -6,11 +6,11 @@ import lombok.Setter;
 
 @Embeddable
 @Getter @Setter
-public class BdinfId {
+public class BdinfsId {
     private Long empid;
     private Short modid;
     private Short subid;
-
+    
     private Long bdinfid;
     private String bdinfnumem;
     private String bdinffechi;

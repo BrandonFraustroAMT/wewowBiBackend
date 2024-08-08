@@ -17,5 +17,9 @@ public class BdinfService implements IBdinfService{
     public List<Bdinf> getAll() {
         return (List<Bdinf>) bRepository.findAll();
     }
+
+    public List<Bdinf> getAnswersEmpID(Long empid) {
+        return bRepository.getAnswersByEmp(empid);
+    }
     
 }
