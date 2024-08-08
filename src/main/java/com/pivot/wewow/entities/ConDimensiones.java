@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter @Setter
 public class ConDimensiones {
     @EmbeddedId
-    private ConDemograficosId conDimensionesId;
+    private ConDimensionesId conDimensionesId;
 
     private Short statement_resultvalue;
     private Float statement_standarddeviation;
