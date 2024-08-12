@@ -18,7 +18,7 @@ public interface Tindl010Repository extends CrudRepository<Tindl010, Tindl010Id>
 
     @Query("SELECT t.tindl010Id.empid, t2.dimid, t3.dimdesc, t.tindl010Id.lindidlin, " +
             "t2.linddescc, t.indclasifi, " +
-            "t.tindl010Id.indxlidln, t.indxldesc " +
+            "t.tindl010Id.indxlidln, t.indxldesc, t.indvalpon, t.resultvalue, t.benchmark " +
             "FROM Tindl010 t " +
             "JOIN Tlind010 t2 ON t.tindl010Id.empid = t2.tlind010Id.empid AND t.tindl010Id.lindidlin = t2.tlind010Id.lindidlin " +
             "JOIN Dimensiones t3 ON t2.dimid = t3.dimid " +

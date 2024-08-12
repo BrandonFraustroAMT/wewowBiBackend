@@ -1,5 +1,8 @@
 package com.pivot.wewow.entities;
 
+import java.math.BigDecimal;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -23,10 +26,10 @@ public class Tindl010 {
     private Long indciaproq;
     private String indmandat;
     private String indclasifi;
-    private Float indvalpon;
+    private BigDecimal indvalpon;
     private String inddivpon;
     private String indtxtadi;
     private String indxcprtck;
-    private Float resultvalue;
-    private Float benchmark;
+    private BigDecimal resultvalue;
+    private BigDecimal benchmark;
 }
