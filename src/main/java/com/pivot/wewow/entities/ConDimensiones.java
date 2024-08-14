@@ -1,5 +1,7 @@
 package com.pivot.wewow.entities;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -13,16 +15,16 @@ public class ConDimensiones {
     @EmbeddedId
     private ConDimensionesId conDimensionesId;
 
-    private Short statement_resultvalue;
-    private Float statement_standarddeviation;
-    private Float benchmark1;
-    private Float benchmark2;
-    private Float benchmark3;
-    private Float benchmark4;
-    private Float benchmark5;
-    private Float benchmark6;
-    private Float benchmark7;
-    private Float benchmark8;
-    private Float benchmark9;
-    private Float benchmark10;
+    private BigDecimal statement_resultvalue;
+    private BigDecimal statement_standarddeviation;
+    private BigDecimal benchmark1;
+    private BigDecimal benchmark2;
+    private BigDecimal benchmark3;
+    private BigDecimal benchmark4;
+    private BigDecimal benchmark5;
+    private BigDecimal benchmark6;
+    private BigDecimal benchmark7;
+    private BigDecimal benchmark8;
+    private BigDecimal benchmark9;
+    private BigDecimal benchmark10;
 }

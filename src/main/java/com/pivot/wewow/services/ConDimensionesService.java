@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pivot.wewow.dto.DimensionesDTO;
 import com.pivot.wewow.entities.ConDimensiones;
 import com.pivot.wewow.repositories.ConDimensionesRepository;
 
@@ -16,6 +17,10 @@ public class ConDimensionesService implements IConDimensionesService{
     @Override
     public List<ConDimensiones> getAll() {
         return (List<ConDimensiones>) conDimensionesRepository.findAll();
+    }
+
+    public List<DimensionesDTO> getDataDimensions(Long empid) {
+        return conDimensionesRepository.findDataDimensions(empid);
     }
     
 }

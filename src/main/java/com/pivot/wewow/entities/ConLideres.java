@@ -1,5 +1,7 @@
 package com.pivot.wewow.entities;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -7,7 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "FactTableLideres")
+@Table(name = "facttablelideres")
 @Getter @Setter
 public class ConLideres {
     @EmbeddedId
@@ -24,7 +26,7 @@ public class ConLideres {
     private String generacion;
     private String genero;
     private String tipo_trabajo;
-    private float lider_resultvalue;
-    private float lider_standardeviation;
-    private float lider_benchmark_overral;
+    private BigDecimal lider_resultvalue;
+    private BigDecimal lider_standardeviation;
+    private BigDecimal lider_benchmark_overral;
 }

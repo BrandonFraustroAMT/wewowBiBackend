@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pivot.wewow.dto.LideresDTO;
 import com.pivot.wewow.entities.ConLideres;
 import com.pivot.wewow.repositories.ConLideresRepository;
 
@@ -16,6 +17,10 @@ public class ConLideresService implements IConLideresService{
     @Override
     public List<ConLideres> getAll() {
         return (List<ConLideres>) conLideresRepository.findAll();
+    }
+
+    public List<LideresDTO> getLideres(Long empid) {
+        return conLideresRepository.findDataLideres(empid);
     }
     
 }
