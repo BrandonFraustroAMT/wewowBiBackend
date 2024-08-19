@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter @Setter
 public class Bdbd010 {
     @EmbeddedId
-    private Bdbd010Id id;
+    private Bdbd010Id bdbdo10id;
 
     private String bdname;
     private String bdnumem;

@@ -17,5 +17,10 @@ public class Bdbd010Service implements IBdbd010Service{
     public List<Bdbd010> getAll() {
         return (List<Bdbd010>) bdbd010Repository.findAll();
     }
+
+    public List<Bdbd010> getBdbd010s(Long empid) {
+        return bdbd010Repository.getBdbd010ByEmp(empid);
+    }
+    
     
 }
