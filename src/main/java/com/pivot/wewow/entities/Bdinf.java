@@ -29,6 +29,7 @@ public class Bdinf {
     private String bdinfarea;
     private String bdinfcondcion;
     private String bdinfgenero;
+    private String bdinfgradac;
     private String bdinfindxvc;
     private Long bdinfindxvcn;
     private String bdinfname;
