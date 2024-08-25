@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pivot.wewow.dto.Tindl010DTO;
 import com.pivot.wewow.entities.Tindl010;
 import com.pivot.wewow.services.Tindl010Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,9 +35,14 @@ public class Tindl010Controller {
 
     @GetMapping("/tindl010/dimensions/{empid}")
     public ResponseEntity<?> getDataDimensions(@PathVariable Long empid) {
-        List<Object[]> results = tindl010Service.getDataDimensions(empid);
+        List<Tindl010DTO> results = tindl010Service.getDataDimensions(empid);
         return ResponseEntity.ok(results);
     }
+    /* @GetMapping("/tindl010/dimensions/{empid}")
+    public ResponseEntity<?> getDataDimensions(@PathVariable Long empid) {
+        List<Object[]> results = tindl010Service.getDataDimensions(empid);
+        return ResponseEntity.ok(results);
+    } */
     
     
 }

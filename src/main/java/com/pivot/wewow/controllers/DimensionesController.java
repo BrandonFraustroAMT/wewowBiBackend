@@ -2,6 +2,8 @@ package com.pivot.wewow.controllers;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,10 +20,17 @@ public class DimensionesController {
     @Autowired
     private DimensionesService dimensionesService;
 
+    private static final Logger logger = LoggerFactory.getLogger(DimensionesController.class);
+
     @GetMapping("/dimensiones")
     public ResponseEntity<?> getAll() {
-        List<Dimensiones> dList = dimensionesService.getAll();
-        return ResponseEntity.ok(dList);
+        try {
+            List<Dimensiones> dList = dimensionesService.getAll();
+            return ResponseEntity.ok(dList);
+        } catch(Exception e) {
+            logger.error("DimensionesController:getAll ", e);
+            throw e;
+        }
     }
     
 }

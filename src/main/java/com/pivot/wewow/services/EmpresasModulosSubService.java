@@ -15,13 +15,8 @@ public class EmpresasModulosSubService implements IEmpresasModulosSubService{
 
     @Override
     public List<EmpresasModulosSub> getAll() {
-        try {
-            System.out.println("Datos: " +eModulosSubRepository.findAll());
-            return (List<EmpresasModulosSub>) eModulosSubRepository.findAll();
-        } catch (Exception e) {
-            System.out.println("Error " + e);
-            return null;
-        }
+        return (List<EmpresasModulosSub>) eModulosSubRepository.findAll();
+
     }
     
 }

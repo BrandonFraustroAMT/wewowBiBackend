@@ -2,6 +2,8 @@ package com.pivot.wewow.services;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,8 @@ public class EmpresasService implements IEmpresasService{
     @Autowired
     private EmpresasRepository eRepository;
 
+    private static final Logger logger = LoggerFactory.getLogger(EmpresasService.class);
+
     @Override
     public List<Empresas> getAll() {
         return (List<Empresas>) eRepository.findAll();
@@ -20,7 +24,12 @@ public class EmpresasService implements IEmpresasService{
 
     @Override
     public Empresas getById(Long id) {
-        return eRepository.findById(id).get();
+        try {
+            return eRepository.findById(id).get();
+        } catch(Exception e) {
+            logger.error("EmpresasService:getById ", e);
+            throw e;
+        }
     }
     
 }

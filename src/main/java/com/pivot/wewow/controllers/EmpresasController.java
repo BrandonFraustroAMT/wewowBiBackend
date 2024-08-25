@@ -2,6 +2,8 @@ package com.pivot.wewow.controllers;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,10 +22,17 @@ public class EmpresasController {
     @Autowired
     private EmpresasService eService;
 
+    private static final Logger logger = LoggerFactory.getLogger(EmpresasController.class);
+
     @GetMapping("/empresas")
     public ResponseEntity<?> getAll() {
-        List<Empresas> empresas = eService.getAll();
-        return ResponseEntity.ok(empresas);
+        try {
+            List<Empresas> empresas = eService.getAll();
+            return ResponseEntity.ok(empresas);
+        } catch(Exception e) {
+            logger.error("EmpresasController:getAll ", e);
+            throw e;
+        }
     }
 
     @GetMapping("/empresas/{empid}")
@@ -35,8 +44,8 @@ public class EmpresasController {
             }
             return ResponseEntity.notFound().build();
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-            return ResponseEntity.badRequest().body(null);
+            logger.error("EmpresasController:getAll ", e);
+            throw e;
         }
     }
     
