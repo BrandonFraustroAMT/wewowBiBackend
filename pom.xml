@@ -11,7 +11,7 @@
 	<groupId>com.pivot</groupId>
 	<artifactId>wewow</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>wewow</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -68,6 +68,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>ws-app</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -79,6 +80,7 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<executable>true</executable>
 				</configuration>
 			</plugin>
 		</plugins>
